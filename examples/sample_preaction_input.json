@@ -1,0 +1,1 @@
+{"query":"Find the user's upcoming appointment.","context_without_candidate_memory":"The agent can query the appointment database.","candidate_memory":"The user prefers appointment results in chronological order.","task_contract":"Use the appointment lookup tool and do not alter records."}

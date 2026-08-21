@@ -1,0 +1,4 @@
+name: STATE-Bench
+dataset:
+  path: data/external/STATE-Bench
+top_k: 4

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driftguard"
+version = "0.1.0"
+description = "Causal attribution of memory drift for online LLM agents"
+requires-python = ">=3.10"
+dependencies = ["numpy<2.0", "scikit-learn", "pyyaml"]
+
+[project.optional-dependencies]
+orm = ["torch", "transformers==4.55.4", "peft", "accelerate", "safetensors"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["driftguard*"]

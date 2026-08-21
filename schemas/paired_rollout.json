@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["original","counterfactual"],"properties":{"original":{"type":"object"},"counterfactual":{"type":"object"},"candidate_memory":{"type":"string"},"neutralized_memory":{"type":"string"}}}

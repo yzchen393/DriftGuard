@@ -1,0 +1,4 @@
+name: Mem2ActBench
+dataset:
+  path: data/external/Mem2ActBench
+top_k: 4

@@ -1,0 +1,4 @@
+name: DBBench
+dataset:
+  path: data/external/DBBench
+top_k: 4

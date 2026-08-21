@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["labels","masks"],"properties":{"labels":{"type":"object","required":["action","attack","violation","task"]},"masks":{"type":"object","required":["action","attack","violation","task"]}}}

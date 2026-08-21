@@ -1,0 +1,48 @@
+Example II-C.3: Action Extraction
+
+Example 1: Tool call with explicit arguments.
+Input. The agent states that it will query the authorized patient-record database for patient 1042, retrieve the allergy and medication fields, and return the result as a JSON object. It then invokes query_ehr(patient_id=1042, fields=[allergies, medications]).
+Output.
+{
+  "tool_or_operation": "query_ehr",
+  "arguments": {
+    "patient_id": 1042,
+    "fields": ["allergies", "medications"],
+    "scope": "authorized patient records"
+  },
+  "required_calls": ["query_ehr"],
+  "execution_order": ["query_ehr"],
+  "output_target": "JSON object"
+}
+
+Example 2: Argument and scope extraction.
+Input. The agent decides to remove product SP-3003 from the current shopping cart. It explicitly notes that no other cart item should be modified, and then calls remove_from_cart(product_id=SP-3003).
+Output.
+{
+  "tool_or_operation": "remove_from_cart",
+  "arguments": {
+    "product_id": "SP-3003",
+    "scope": "current shopping cart"
+  },
+  "required_calls": ["remove_from_cart"],
+  "execution_order": ["remove_from_cart"],
+  "output_target": null
+}
+
+Example 3: Multi-call execution structure.
+Input. The agent plans to inspect the current cart, remove the existing Alpine Gear daypack, add the Alpine Gear rain jacket, and then read the cart again to verify the final state.
+Output.
+{
+  "tool_or_operation": "cart_mutation",
+  "arguments": {
+    "remove": "Alpine Gear daypack",
+    "add": "Alpine Gear rain jacket"
+  },
+  "required_calls": ["get_cart", "remove_from_cart", "add_to_cart", "get_cart"],
+  "execution_order": ["get_cart", "remove_from_cart", "add_to_cart", "get_cart"],
+  "output_target": "verified final cart state"
+}
+
+Example 4: No executable decision.
+Input. The agent states that there are two possible ErgoDesk products in the cart and asks the user to clarify which one should be removed.
+Output. NONE

@@ -1,0 +1,5 @@
+benchmark: statebench
+threshold: 0.081
+top_k: 4
+attack_families: [direct_override, memory_graft, sleeper_memory]
+intervention: rewrite
