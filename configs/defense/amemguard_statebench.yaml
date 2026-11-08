@@ -1,0 +1,7 @@
+method: AMemGuard
+benchmark: statebench
+top_k: 4
+attack_families: [direct_override, memory_graft, sleeper_memory]
+num_lessons: 4
+consistency_method: llm
+state_path: null
